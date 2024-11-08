@@ -1,0 +1,170 @@
+.App {
+  min-height: 100vh;
+  width: 90%;
+  background-color: var(--black);
+  text-align: center;
+  margin: 100px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App form,
+.App .item-holder {
+  max-width: 600px;
+  width: 100%;
+}
+
+.App .item:first-child {
+  margin-top: 20px;
+}
+
+.App .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  color: var(--white);
+  border-bottom: 1px solid var(--lightgrey);
+  transition: transform .2s ease;
+}
+
+.App .item p {
+  max-width: 50%;
+  word-wrap: break-word;
+}
+
+.App .edit-item {
+  padding: 20px;
+  border-radius: 5px;
+  transform: scale(1.1);
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+.App .edit-item button {
+  display: none;
+}
+
+.App button {
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease;
+}
+
+.App button:hover {
+  transform: scale(1.05);
+}
+
+.App form,
+.App .btn-holder {
+  display: flex;
+}
+
+.App form {
+  width: 90%;
+  padding: 20px;
+  background: var(--backgroud);
+  border-radius: 5px;
+}
+
+.App .btn-holder {
+  gap: 20px;
+}
+
+.App form input[type=text] {
+  font-size: 20px;
+  flex: 1;
+  height: 40px;
+  padding: 10px 15px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.App form input[type=text].edit-mode {
+  outline: 2px solid var(--blue);
+}
+
+.App form input[type=text].edit-mode::placeholder {
+  color: var(--blue);
+}
+
+.App form input[type=text].error {
+  outline: 2px solid var(--red);
+}
+
+.App form input[type=text].error::placeholder {
+  color: var(--red);
+}
+
+.App form button[type=submit],
+.App .remove-all-btn {
+  align-items: center;
+  padding: 12px 30px;
+  min-width: 80px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.App form button[type=submit].error {
+  color: var(--white);
+  background-color: var(--red);
+  border: none;
+}
+
+.App form .add-form-btn {
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 3px;
+  border: none;
+}
+
+.App .item .btn-holder .edit-btn,
+.App .item .btn-holder .delete-btn {
+  height: 45px;
+  width: 70px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.App form .edit-form-btn,
+.App .item .btn-holder .edit-btn {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+}
+
+.App .remove-all-btn,
+.App .item .btn-holder .delete-btn {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
+}
+
+.App .remove-all-btn {
+  background-color: var(--red);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .App form {
+    flex-direction: column;
+  }
+
+  .App form input[type="text"] {
+    margin-right: unset;
+    flex: unset;
+  }
+
+  .App form button[type="submit"] {
+    align-self: center;
+    margin-top: 20px;
+  }
+}
